@@ -42,7 +42,7 @@ class Process_thread(threading.Thread):
                 new_friend.send('哈哈，我接受了你的好友请求,我是厦门GDG小助手机器人，回复"I love GDG"可以帮你加入厦门GDG群')
 	    elif valid_msg(msg):
                 invite(msg)
-	    elif (msg.member is None) and (msg.chat not in mps):
+	    elif (msg.member is None) and (msg.chat not in mps) and (msg.chat is not None):
 	        time.sleep(random.randint(5,30))
                 msg.chat.send('Hello {} ，回复"I love GDG"可以帮你加入厦门GDG群'.format(msg.chat.name))
             elif msg.chat in google_mps:
